@@ -18,6 +18,19 @@ consumes:
 produces:
   - application/json
 paths:
+  /:
+    get:
+      description: "This endpoint returns all todos available in the database"
+      operationId: "GetAllTodos"
+      parameters: []
+      responses:
+        200:
+          description: "An array of todos"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Todo"
+      x-swagger-router-controller: "GetAllTodos"
   /hello:
     # binds a127 app logic to a route
     x-swagger-router-controller: hello_world
