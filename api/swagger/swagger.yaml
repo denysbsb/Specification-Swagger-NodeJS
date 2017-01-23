@@ -49,6 +49,25 @@ paths:
           schema: 
             $ref: "#/definitions/AddResponse"
       x-swagger-router-controller: "AddTodo"
+  /todo/{id}:
+    get:
+      description: "Retrieve a single todo by id"
+      operationId: "FindTodoById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "ID of the todo to get"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "Todo response"
+          schema:
+            $ref: "#/definitions/Todo"
+      x-swagger-router-controller: "FindTodoById"
   /hello:
     # binds a127 app logic to a route
     x-swagger-router-controller: hello_world
