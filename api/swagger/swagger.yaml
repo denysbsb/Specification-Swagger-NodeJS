@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: "0.0.1"
-  title: Swagger NodeAPI
+  title: Swagger API
 # during dev, should point to your local machine
 host: localhost:10010
 # basePath prefixes all resource paths 
@@ -131,3 +131,9 @@ definitions:
       completed:
         type: "boolean"
         description: "Indicates if the todo has been completed or not"
+  AddResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        description: "Id of the todo added"
